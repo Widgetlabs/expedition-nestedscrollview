@@ -1,0 +1,13 @@
+/.idea/*
+!/.idea/inspectionProfiles
+!/.idea/codeStyleSettings.xml
+/captures
+/local.properties
+/test
+.DS_Store
+.gradle
+build
+*.iml
+*.iws
+*.swp
+*.hprof
