@@ -78,7 +78,7 @@ open class NestedRecyclerView : RecyclerView, NestedScrollingParent {
 
 
 	override fun onNestedScrollAccepted(child: View, target: View, axes: Int) {
-		if (nestedScrollAxes or View.SCROLL_AXIS_VERTICAL != 0) {
+		if (nestedScrollAxes and View.SCROLL_AXIS_VERTICAL != 0) {
 			// A descendent started scrolling, so we'll observe it.
 			nestedScrollTarget = target
 			nestedScrollTargetIsBeingDragged = false
@@ -91,7 +91,7 @@ open class NestedRecyclerView : RecyclerView, NestedScrollingParent {
 
 	// We only support vertical scrolling.
 	override fun onStartNestedScroll(child: View, target: View, nestedScrollAxes: Int) =
-		(nestedScrollAxes or View.SCROLL_AXIS_VERTICAL != 0)
+		(nestedScrollAxes and View.SCROLL_AXIS_VERTICAL != 0)
 
 
 	override fun onStopNestedScroll(child: View) {
