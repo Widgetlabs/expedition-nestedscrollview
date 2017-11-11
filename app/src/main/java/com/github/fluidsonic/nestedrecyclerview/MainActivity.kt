@@ -1,4 +1,4 @@
-package fluidsonic.github.com.nestedrecyclerview
+package com.github.fluidsonic.nestedrecyclerview
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
 		setContentView(R.layout.activity_main)
 
-		val recyclerView = findViewById(android.R.id.list) as RecyclerView
+		val recyclerView = findViewById<RecyclerView>(android.R.id.list)
 		recyclerView.adapter = Adapter()
 		recyclerView.layoutManager = LinearLayoutManager(this)
 	}

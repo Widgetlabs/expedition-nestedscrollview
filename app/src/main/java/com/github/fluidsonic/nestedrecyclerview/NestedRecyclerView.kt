@@ -1,4 +1,4 @@
-package fluidsonic.github.com.nestedrecyclerview
+package com.github.fluidsonic.nestedrecyclerview
 
 import android.content.Context
 import android.support.v4.view.NestedScrollingParent
@@ -78,7 +78,7 @@ open class NestedRecyclerView : RecyclerView, NestedScrollingParent {
 
 
 	override fun onNestedScrollAccepted(child: View, target: View, axes: Int) {
-		if (nestedScrollAxes and View.SCROLL_AXIS_VERTICAL != 0) {
+		if (axes and View.SCROLL_AXIS_VERTICAL != 0) {
 			// A descendent started scrolling, so we'll observe it.
 			nestedScrollTarget = target
 			nestedScrollTargetIsBeingDragged = false
