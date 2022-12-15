@@ -1,32 +1,22 @@
 package com.github.fluidsonic.nestedrecyclerview
 
 import android.content.Context
-import android.support.v4.view.NestedScrollingParent
-import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import androidx.core.view.NestedScrollingParent
+import androidx.recyclerview.widget.RecyclerView
 
-
-open class NestedRecyclerView : RecyclerView, NestedScrollingParent {
+open class NestedRecyclerView @JvmOverloads constructor(
+	context: Context,
+	attrs: AttributeSet? = null,
+	defStyle: Int = 0
+) : RecyclerView(context, attrs, defStyle), NestedScrollingParent {
 
 	private var nestedScrollTarget: View? = null
 	private var nestedScrollTargetIsBeingDragged = false
 	private var nestedScrollTargetWasUnableToScroll = false
 	private var skipsTouchInterception = false
-
-
-	constructor(context: Context) :
-		super(context)
-
-
-	constructor(context: Context, attrs: AttributeSet?) :
-		super(context, attrs)
-
-
-	constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
-		super(context, attrs, defStyleAttr)
-
 
 	override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
 		val temporarilySkipsInterception = nestedScrollTarget != null
